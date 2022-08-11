@@ -6,11 +6,12 @@ import { Injectable } from '@angular/core';
 })
 export class RedditService {
 
-  apiUrl:string = "https://www.reddit.com/r/aww.json";
-
+  // apiUrl:string = "https://www.reddit.com/r/aww.json";
+  apiUrl:string = "https://www.reddit.com/r/";
   constructor(private http:HttpClient) { }
   
   getAwwPosts():any {
+    //get requesting to the apiUrl aka reddit. 
     return this.http.get(this.apiUrl);
   }
 

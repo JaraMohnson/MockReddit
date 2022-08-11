@@ -13,26 +13,37 @@ export class ListComponent implements OnInit {
 
   subreddit:string = "";
   item:Post = {} as Post;
-  constructor(private apiService:RedditService) { }
+  constructor(private RedditService:RedditService) { }
 
-  ngOnInit(): void {
-    this.apiService.getAwwPosts().subscribe((response: Post) => {
-      this.item = response;
-    });
-  } 
+  //"subscribe" = wait for a response, then when you get it, then do the part in the {}
+  //
+  ngOnInit(): void {  
+    this.ReturnSub("aww");
 
-  // ReturnSub(sub:string):void{
-  //   this.apiService.getReddit(sub).subscribe((response: Post) => {
-  //     this.item = response;
-  //   })
-    
+  }
+   
+
+  //formerly in ngOnInit()
+  // getApiData():void{
+  //   //response = result 
+  //   this.RedditService.getAwwPosts().subscribe((response: Post) => {
+  //   this.item = response; 
+  //   });
   // }
+
+
+  ReturnSub(sub:string):void{
+    this.RedditService.getReddit(sub).subscribe((response: Post) => {
+      this.item = response;
+    })
+    
+  }
 
   //i can pull the value from here so why can't i DO ANYTHING WITH IT??? 
   SearchSubreddit(form:NgForm):void {
     this.subreddit= form.form.value.subreddit;
     console.log(this.subreddit); //test test 
-
+    this.ReturnSub(this.subreddit);
   }
 
 }

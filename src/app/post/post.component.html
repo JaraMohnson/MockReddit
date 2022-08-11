@@ -1,6 +1,10 @@
-<div class="separate">
-  <a href="https://www.reddit.com/{{ chosenPost.data.permalink }}">
-    <h3>{{ chosenPost.data.title }}</h3>
-    <img src="{{ chosenPost.data.thumbnail }}" />
-  </a>
-</div>
+<!-- <div class="separate"> -->
+<a
+  href="https://www.reddit.com/{{ chosenPost.data.permalink }}"
+  class="row border rounded m-2 bg-white"
+>
+  <!-- md is medium screen, sm is small -->
+  <img class="col-md-2 col-sm-6" src="{{ chosenPost.data.thumbnail }}" />
+  <h3 class="col-md-10 col-sm-6">{{ chosenPost.data.title }}</h3>
+</a>
+<!-- </div> -->

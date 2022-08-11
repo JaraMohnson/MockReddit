@@ -1,9 +1,9 @@
 
-img.hello {
-    width: 4em;
-    height: 4em;
+img.col-1 {
+    width: 5em;
+    height: 5em;
 }
-.separate {
+/* .separate {
 
     border: 6px solid rgb(238, 155, 60);
     border-radius: 30px;
@@ -25,3 +25,11 @@ img.hello {
     background-color: bisque;
 }
 
+ */
+body {
+    
+     background: linear-gradient(to right,  #fefbd8, #b7c4df );
+     height: 100vw;
+     margin: -8px;
+    padding-top: 2%;
+}

@@ -1,10 +1,5 @@
 <div class="hi">
-  <img
-    class="hello"
-    src="https://www.redditinc.com/assets/images/site/reddit-logo.png"
-  />
-
-  <form #search="ngForm" (ngSubmit)="SearchSubreddit(search)">
+  <form #search="ngForm" (ngSubmit)="SearchSubreddit(search)" class="row">
     <input
       type="text"
       name="subreddit"
@@ -14,8 +9,10 @@
     <button>Go</button>
   </form>
 
+  <h1 class="text-center">r/{{ item.data.children[0].data.subreddit }}</h1>
+
   <!-- testing to see if i can pull value from the form -->
-  <button (click)="SearchSubreddit(search)">Test</button>
+  <!-- <button (click)="SearchSubreddit(search)">Test</button> -->
 
   <!-- <button (click)="ReturnSub(subreddit)"> </button> -->
 
