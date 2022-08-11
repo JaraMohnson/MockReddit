@@ -1,0 +1,25 @@
+<div class="hi">
+  <img
+    class="hello"
+    src="https://www.redditinc.com/assets/images/site/reddit-logo.png"
+  />
+
+  <form #search="ngForm" (ngSubmit)="SearchSubreddit(search)">
+    <input
+      type="text"
+      name="subreddit"
+      placeholder="Search for a subreddit"
+      ngModel
+    />
+    <button>Go</button>
+  </form>
+
+  <!-- testing to see if i can pull value from the form -->
+  <button (click)="SearchSubreddit(search)">Test</button>
+
+  <!-- <button (click)="ReturnSub(subreddit)"> </button> -->
+
+  <div class="allPosts">
+    <app-post *ngFor="let p of item.data.children" [chosenPost]="p"> </app-post>
+  </div>
+</div>
